@@ -21,8 +21,8 @@ public class User {
 	@Column
 	private String part;
 
-//	@OneToMany(mappedBy = "user")
-//	private List<Board> boards;
+	@OneToMany(mappedBy = "user")
+	private List<Board> boards;
 
 	public User(){
 

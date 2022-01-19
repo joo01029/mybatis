@@ -16,5 +16,8 @@ public class UserService {
 		return userMapper.findAll();
 
 	}
+	public List<User> getUsersByNames(List<String> userNames){
+		return userMapper.findByNames(userNames);
+	}
 
 }

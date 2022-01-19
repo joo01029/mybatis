@@ -9,6 +9,6 @@ import java.util.List;
 @Mapper
 public interface UserMapper {
 	List<User> findAll();
-
+	List<User> findByNames(List<String> userNames);
 	void userAdd(User user);
 }
