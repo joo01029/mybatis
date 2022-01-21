@@ -2,6 +2,7 @@ package com.example.mybatis;
 
 import com.example.mybatis.model.entity.User;
 import lombok.RequiredArgsConstructor;
+import org.springframework.lang.Nullable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,5 +21,10 @@ public class UserController {
 	@GetMapping("/name")
 	public List<User> getUserByNames(@RequestParam List<String> userNames){
 		return userService.getUsersByNames(userNames);
+	}
+
+	@GetMapping("/single")
+	public List<User> getUserByName(@RequestParam @Nullable String name){
+		return userService.getUserByName(name);
 	}
 }

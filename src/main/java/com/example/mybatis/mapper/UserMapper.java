@@ -11,4 +11,5 @@ public interface UserMapper {
 	List<User> findAll();
 	List<User> findByNames(List<String> userNames);
 	void userAdd(User user);
+	List<User> findByName(String name);
 }

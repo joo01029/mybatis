@@ -36,6 +36,16 @@
         </foreach>
     </select>
 
+    <select id="findByName" resultMap="UserMap">
+        SELECT
+            u.id as user_id, u.name as user_name, u.part as user_part,
+            b.id as board_id, b.title as board_title
+        FROM user u LEFT JOIN board b on u.id = b.user_id
+        <if test="name != null">
+            WHERE name = #{name}
+        </if>
+    </select>
+
     <insert id="userAdd">
         INSERT user (name, part) VALUES  (#{name}, #{part})
     </insert>

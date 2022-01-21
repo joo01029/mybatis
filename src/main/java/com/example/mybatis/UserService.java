@@ -20,4 +20,8 @@ public class UserService {
 		return userMapper.findByNames(userNames);
 	}
 
+	public List<User> getUserByName(String name){
+		return userMapper.findByName(name);
+	}
+
 }
